@@ -2,3 +2,4 @@ $ npm install -g @angular/cli
 $ cd.............
 $ ng new "projet-name"
 $ ng serve (start development server)
+$ ng generate component server (generate shortcut to create new component folder quicker...)
