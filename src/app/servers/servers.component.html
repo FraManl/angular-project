@@ -1,2 +1,31 @@
+<!-- Bind Data to component [] means we're using property binding, to bind some property from constructor  -->
+<!-- See also event binding with () syntax -->
+
+<label>Server Name</label>
+<!-- $event gives access to event data, very useful to capture data from the front -->
+<!-- 1 way data binding -->
+<!-- Captures the value to push it inside the component (ascending) -->
+<input type="text" class="form-control" (input)="onUpdateServerName($event)" />
+
+<!-- 2 way data binding  [()]-->
+<!-- take the value from the event and update the component variable with it: ascending & descending simultaneously -->
+<!-- But it will also change the value of serverName, from the component down to
+another front-end output somewhere else on the page (2 ways) -->
+<input type="text" class="form-control" [(ngModel)]="serverName" />
+
+<p>{{ serverName }}</p>
+
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()"
+>
+  Add Server
+</button>
+<!-- Multiple ways to achieve the same thing -->
+<!-- Guide rules, don't mix string interpolation and property binding -->
+<!-- <p>{{ allowNewServer }}</p>
+<p [innerText]="allowNewServer"></p> -->
+<p [innerText]="serverCreationStatus"></p>
 <app-server></app-server>
 <app-server></app-server>

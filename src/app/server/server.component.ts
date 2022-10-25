@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
   templateUrl: './server.component.html',
   //   template: '<app-server></app-server>', // either templateUrl or template, one of the two has to be present - can be served inline
 })
-export class ServerComponent {}
+export class ServerComponent {
+  serverId: number = 10;
+  serverStatus: string = 'offline';
+
+  getServerStatus() {
+    return this.serverStatus;
+  }
+}
