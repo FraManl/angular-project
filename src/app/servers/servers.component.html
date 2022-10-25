@@ -39,6 +39,11 @@ another front-end output somewhere else on the page (2 ways) -->
 <!-- Guide rules, don't mix string interpolation and property binding -->
 <!-- <p>{{ allowNewServer }}</p>
 <p [innerText]="allowNewServer"></p> -->
-<p [innerText]="serverCreationStatus"></p>
+<!-- <p [innerText]="serverCreationStatus"></p> -->
+
+<!-- Directive inserted in the DOM *ngIf: it will modify the DOM behavior and structure accordingly -->
+<!-- * means it is a structural directive, changing the DOM -->
+<p *ngIf="serverCreated">Server was created, server is {{ serverName }}</p>
+<p>{{ serverName }}</p>
 <app-server></app-server>
 <app-server></app-server>
