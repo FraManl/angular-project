@@ -1,5 +1,18 @@
 <!-- Bind Data to component [] means we're using property binding, to bind some property from constructor  -->
 <!-- See also event binding with () syntax -->
+<label>Username Input</label>
+<input type="text" class="form-control" [(ngModel)]="userName" />
+<p>{{ userName }}</p>
+<!-- <p>Reset Button activated ? {{ resetButton }}</p> -->
+<button
+  class="btn btn-primary"
+  [disabled]="userName === ''"
+  (click)="resetInput()"
+>
+  Reset
+</button>
+<br />
+<br />
 
 <label>Server Name</label>
 <!-- $event gives access to event data, very useful to capture data from the front -->
