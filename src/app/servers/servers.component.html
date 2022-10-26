@@ -43,7 +43,12 @@ another front-end output somewhere else on the page (2 ways) -->
 
 <!-- Directive inserted in the DOM *ngIf: it will modify the DOM behavior and structure accordingly -->
 <!-- * means it is a structural directive, changing the DOM -->
-<p *ngIf="serverCreated">Server was created, server is {{ serverName }}</p>
+<p *ngIf="serverCreated; else noServer">
+  Server was created, server name is {{ serverName }}
+</p>
+<!-- Enhancing ngIf with an else statement using : Local referencing -->
+<!-- Allows to mark a spot in the html template we want to render conditionally -->
+<ng-template #noServer> <p>No server was created</p></ng-template>
 <p>{{ serverName }}</p>
 <app-server></app-server>
 <app-server></app-server>

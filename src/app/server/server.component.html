@@ -1,4 +1,8 @@
 <!-- String interpolation -->
 <!-- Always returns a string -->
 <p>{{ "Server" }}: with id {{ serverId }} is {{ serverStatus }}</p>
-<p>{{ getServerStatus() }}</p>
+
+<!-- ngStyle, for styling directives, property bound, we want to bind properties on ngStyle using [], expect js object as parameter -->
+<!-- look at background color annotation, both syntax can work -->
+<!-- <p [ngStyle]="{ 'background-color': 'red' }">{{ getServerStatus() }}</p> -->
+<p [ngStyle]="{ backgroundColor: getColor() }">{{ getServerStatus() }}</p>
