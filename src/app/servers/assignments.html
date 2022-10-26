@@ -1,0 +1,5 @@
+<button class="btn btn-primary" (click)=" togglePassword($event)">
+  Display Details
+</button>
+<p *ngIf="toggleBoolean; else noPassword">Tuna Fish Sandwhich</p>
+<ng-template #noPassword><p></p></ng-template>
