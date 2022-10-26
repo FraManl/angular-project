@@ -50,5 +50,7 @@ another front-end output somewhere else on the page (2 ways) -->
 <!-- Allows to mark a spot in the html template we want to render conditionally -->
 <ng-template #noServer> <p>No server was created</p></ng-template>
 <p>{{ serverName }}</p>
-<app-server></app-server>
-<app-server></app-server>
+
+<!-- ngFor to avoid repeating; place as many components as we need by looping over an iterable -->
+<app-server *ngFor="let server of servers"></app-server>
+<!-- <app-server></app-server> -->
