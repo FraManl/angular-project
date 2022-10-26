@@ -58,6 +58,16 @@ export class ServersComponent implements OnInit {
 
     this.eventArray.push(this.counter);
     this.counter += 1;
-    console.log(this.eventArray);
+  }
+
+  getStyle(type: string) {
+    if (type === 'background' && this.counter > 5) {
+      return 'darkblue';
+    }
+    if (type === 'color' && this.counter > 5) {
+      return 'white';
+    } else {
+      return '';
+    }
   }
 }

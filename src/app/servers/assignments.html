@@ -2,4 +2,11 @@
   Display Details
 </button>
 <p *ngIf="toggleBoolean; else noPassword">Tuna Fish Sandwhich</p>
+<p
+  *ngFor="let k of eventArray"
+  [ngStyle]="{ backgroundColor: getStyle('background') }"
+  [ngClass]="{ toggleWhite: getStyle('color') }"
+>
+  {{eventArray[k-1]}}
+</p>
 <ng-template #noPassword><p></p></ng-template>
