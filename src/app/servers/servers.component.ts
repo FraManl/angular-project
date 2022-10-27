@@ -17,7 +17,6 @@ export class ServersComponent implements OnInit {
   servers = ['Testserver', 'Testserver2'];
   toggleBoolean = false;
   eventArray: number[] = [];
-  counter = 1;
 
   constructor() {
     setTimeout(() => {
@@ -51,20 +50,19 @@ export class ServersComponent implements OnInit {
     // this.eventArray.push(event);
   }
 
-  togglePassword(event: any) {
+  togglePassword() {
     this.toggleBoolean
       ? (this.toggleBoolean = false)
       : (this.toggleBoolean = true);
 
-    this.eventArray.push(this.counter);
-    this.counter += 1;
+    this.eventArray.push(this.eventArray.length + 1);
   }
 
   getStyle(type: string) {
-    if (type === 'background' && this.counter > 5) {
+    if (type === 'background' && this.eventArray.length >= 5) {
       return 'darkblue';
     }
-    if (type === 'color' && this.counter > 5) {
+    if (type === 'color' && this.eventArray.length >= 5) {
       return 'white';
     } else {
       return '';

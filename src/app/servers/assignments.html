@@ -1,12 +1,15 @@
-<button class="btn btn-primary" (click)=" togglePassword($event)">
+<button class="btn btn-primary" (click)="togglePassword()">
   Display Details
 </button>
 <p *ngIf="toggleBoolean; else noPassword">Tuna Fish Sandwhich</p>
+
+<!-- [ngStyle]="{ backgroundColor: getStyle('background') }" -->
 <p
   *ngFor="let k of eventArray"
-  [ngStyle]="{ backgroundColor: getStyle('background') }"
-  [ngClass]="{ toggleWhite: getStyle('color') }"
+  [ngStyle]="{ backgroundColor: k >= 5 ? 'blue': '' }"
+  [ngClass]="{ toggleWhite: k >=5 ? 'white' : ''}"
 >
-  {{eventArray[k-1]}}
+  <!-- {{eventArray[k-1]}} -->
+  {{ k }}
 </p>
 <ng-template #noPassword><p></p></ng-template>
